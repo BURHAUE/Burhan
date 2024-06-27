@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>سبحان الله</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: #92C9D1;
+        }
+        .Case1{
+            text-align: center;
+        }
+        .Case2{
+            margin: 200px auto;
+            text-align: center;
+        }
+        .main{
+            background: #FFEFD7;
+        }
+        #value-word-1{
+            background:#E4D69B ;
+            width: 320px;
+            height: 50px;
+            text-align: center;
+            border: none;
+            font-size:30px ;
+            border-radius: 100px 19px 0 0;
+        }
+        #value-button-2{
+            width: 100px;
+            height: 100px;
+            border-radius:125px;
+        }
+        #button-delete{
+            width: 40px;
+            height: 40px;
+            border-radius:15px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        /*   عداد الرقام */
+        #getNum{
+            position: relative;
+            top: 100px;
+            text-align: center;
+            border: solid ;
+            width: fit-content;
+            height: fit-content;
+            border-radius:125px;
+            margin: 50px auto 0 auto;
+        }
+        .list{
+            width: 250px;
+            height: 150px;
+            background: red;
+            position: absolute;
+            right: 0px;
+            direction: rtl;
+            list-style-position:inside ;
+            overflow: auto;
+        }
+        b{
+            text-align: left;
+        }
+    </style>
+    </head>
+    <body>
+    <div class="main">
+        <div class="Case1">
+            <select id="value-word-1">
+            <option value="s1">سبحان اللّٰه</option>
+            <option value="s2">الحمد للّه</option>
+            <option value="s3">اللّٰه أكبر</option>
+            <option value="s4">لا إلهَ إلاّ اللّٰه</option>
+            <option value="s5">أستغفر اللّٰه</option>
+            <option value="s6">أستغفر اللّٰه وأتوب إليه</option>
+            <option value="s7">اللهم صلي وسلم على محمد</option>
+            </select>
+        </div>
+        
+        <div class="list">
+            
+            <ol type="1" id="ee">
+            <li id="l1">سبحان اللّٰه<b id="p1">(0)</b></li>
+              <li id="l2">الحمد للّه<b id="p2">(0)</b></li>
+              <li id="l3">اللّٰه أكبر<b id="p3">(0)</b></li>
+              <li id="l4">لا إلهَ إلاّ اللّٰه<b id="p4">(0)</b></li>
+              <li id="l5">أستغفر اللّٰه<b id="p5">(0)</b></li>
+              <li id="l6">أستغفر اللّٰه وأتوب إليه<b id="p6">(0)</b></li>
+              <li id="l7">اللهم صلي وسلم على محمد<b id="p7">(0)</b></li>
+            </ol>
+            
+        </div>
+        
+        <div class="getNum">
+        <h1 id="getNum">0</h1>
+        </div>
+        <div class="Case2">
+            <button id="button-delete">حذف</button>
+            <button id="value-button-2">تسبيح</button>
+        </div>
+    </div>
+    </body>
+    <script>
+    var val_wo= document.getElementById("value-word-1").value;
+    var num =0
+    var num1;
+    var typeName;
+    var fal ={
+        p1:1,
+        p2:1,
+        p3:1,
+        p4:1,
+        p5:1,
+        p6:1,
+        p7:1,
+        
+    }
+   display()
+    function display(){
+             val_wo= document.getElementById("value-word-1").value;
+            typeName = document.getElementById("value-word-1").value
+         setTimeout('display()',0)
+        }
+        document.getElementById("value-button-2").addEventListener("click",function(){
+            //console.log(val_wo)
+            num++
+            var val1 = document.getElementById("getNum"). innerHTML = num
+            
+            
+        })
+        document.getElementById("button-delete").addEventListener("click",function(){
+            //console.log(val_wo)
+            num1=num 
+            num =0
+            document.getElementById("getNum"). innerHTML ='0'
+           
+        })
+        
+    </script>
+</html>
