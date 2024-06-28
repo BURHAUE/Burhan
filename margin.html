@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>رقم الجلوس</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .main{
+                background:#E9F4FF;
+                width: 300px;
+                height: 200px;
+                margin: 20px auto;
+                box-shadow: 1px 1px 5px  black;
+                padding-top: 50px;
+                border-radius: 20px;
+            }
+            .border{
+                background:#E2E9FF; 
+                width: 80%;
+                height: 100px;
+                margin: 10px auto;
+                box-shadow: 0px 0px 2px  black;
+                border-top-right-radius:50px ;
+                border-bottom-left-radius:50px ;
+            }
+            input{
+                width: 80%;
+                height: 30px;
+                border: solid #1F1A13;
+                border-radius: 10px;
+                background: #F0E4FF;
+                margin: 0 auto;
+                margin-left: 10%;
+                margin-top: 10px;
+                direction: rtl;
+                text-align: center;
+            }
+            input:focus{
+                outline:none;
+            }
+            button{
+                width: 70%;
+                height: 30px;
+                border: solid #C8C3CA;
+                border-radius: 100px;
+                margin-top: 20px;
+            }
+            .button{
+                text-align: center;
+                margin-top: 10px;
+            }
+            button:hover{
+                background: #6A69FF;
+            }
+            p{
+                text-align: right;
+            }
+            #gaa{
+                position: absolute;
+                border: dashed red 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <marquee >يجب أن يكون الأسم رباعي ويكون صحيح</marquee>
+            <div class="border">
+                
+                    <div class="java">
+                        <input type="text"  id="input-student" required placeholder="أسم الطالب هنا" />
+                        <input type="text"  id="input-number" required placeholder="إدخل رقم الجلوس هنا" />
+                    </div>
+                
+                    <div class="button">
+                        <button type="submit" id="go">أستعلام</button>
+                    </div>
+                
+            </div>
+            
+        </div>
+        <p id="na"></p>
+        <p id="num"></p>
+        <p id="hr"></p>
+        <p id="gaa"></p>
+        <p id="grd" style="text-align:center; background:#8CFF8F; "></p>
+        <p id="q"></p>
+    </body>
+    <script>
+        var v;
+        var name = ""
+        var number = 0
+        var wid = "يجب أن يكون الأسم رباعي ويكون صحيح "
+        var arr =[90.54,80.58,70.5,32.55,72.25,80.55,70.25,"71.03"]
+        
+        var ar1 =["قرآن كريم","إسلامية", "اجتماعيات","إنجليزي","عربي","علوم","الرياضيات","معدل "]
+        open()
+        document.getElementById("go").addEventListener("click",function(){
+            
+           name = document.getElementById("input-student").value;
+           number= document.getElementById("input-number").value;
+          if(name != "" && number != 0){
+             document.getElementById("na").innerHTML= `الأسم:    ${name} `
+             document.getElementById("num").innerHTML= `رقم الجلوس:    ${number} `
+             document.getElementById("hr").innerHTML= ` <hr> `
+             for(var i in arr){
+                 v +=arr[i]
+                document.getElementById("grd").innerHTML += `%${ar1[i]} : ${arr[i]}<br> `
+             }
+             document.getElementById("gaa").innerHTML ="😭😭"+"راسب"
+             document.getElementById("q").innerHTML =`<a href="have.html" style="font-size: 30px">اضغط هنا رجاءً </a>`
+          }else{
+             
+          }
+        
+        })
+    
+       // console.log((90.54+80.58+70.5+32.55+72.25+80.55+70.25)/7)
+      </script>
+</html>
